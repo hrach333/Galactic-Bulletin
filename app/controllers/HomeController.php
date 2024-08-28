@@ -20,7 +20,7 @@ class HomeController extends Controller
         $lastNews = $lastNews[0];
         // Получаем записи с учетом пагинации
         $news = $newsModel->paginate($page, $perPage);
-        $title = $this->config['app']['nameApp'];
+        $title = $this->config->get('app.nameApp');
         // Получаем общее количество записей
         $totalNews = $newsModel->count();
 

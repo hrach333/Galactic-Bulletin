@@ -10,12 +10,12 @@ class Database
 
     public function __construct()
     {
-        $this->config = require '../config/config.php';
+        $this->config = Config::getInstance();
     }
 
     public function connect()
     {
-        $dbConfig = $this->config['database'];
+        $dbConfig = $this->config->get('database');
 
         $dsn = "mysql:host={$dbConfig['host']};dbname={$dbConfig['dbname']};charset={$dbConfig['charset']}";
         try {

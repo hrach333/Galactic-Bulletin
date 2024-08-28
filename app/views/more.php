@@ -1,6 +1,6 @@
 <?php ob_start()?>
-<div class="breadcrumbs">Главная / <?=$title?></div>
-<h1><?=$title?></h1>
+<div class="breadcrumbs">Главная / <?=$titleForNews?></div>
+<h1><?=$titleForNews?></h1>
 <div class="container">
         <div class="news-horizontal">
             <div class="row">

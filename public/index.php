@@ -1,7 +1,8 @@
 <?php
-global $config;
-$config = require_once '../config/config.php';
-if ($config['debug']) {
+require '../autoload.php';
+$config = \Core\Config::getInstance();
+$debug = $config->get('debug');
+if ($debug) {
     ini_set('error_reporting', E_ALL);
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -21,11 +22,12 @@ if ($uri !== '/' && file_exists($uri)) {
     require $uri;
     return false; // Возвращаем false, чтобы встроенный сервер PHP обработал файл как статический ресурс
 }
-require '../autoload.php';
+
 //Статистическая функция которою можно вызвать везде, где это нужно
 function asset($path) {
-    global $config;
-    return $config['app']['domainName'] . '/' . ltrim($path, '/');
+    $config = \Core\Config::getInstance();
+    $domain = $config->get('app.domainNaime');
+    return $domain . '/' . ltrim($path, '/');
 }
 // Инициализация роутера
 $router = new Core\Router();

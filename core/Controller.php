@@ -7,7 +7,7 @@ class Controller {
     protected $config;
     public function __construct()
     {
-        $this->config = require '../config/config.php';
+        $this->config = Config::getInstance();
     }
     /**
      * Метод для загрузки представления.

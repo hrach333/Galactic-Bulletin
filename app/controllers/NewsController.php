@@ -14,9 +14,10 @@ class NewsController extends Controller
         //print_r($item);
         $lastNews = $news->getLastNews();
         $lastNews = $lastNews[0];
-        $title = $item['title'] . ' - ' . $this->config['app']['nameApp'];
+        $title = $item['title'] . ' - ' . $this->config->get('app.domainNaime');
         $this->loadView('more',[
             'title' => $title,
+            'titleForNews' => $item['title'],
             'announce' => $item['announce'],
             'date' => $item['date'],
             'content' => $item['content'],
