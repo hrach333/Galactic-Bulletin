@@ -1,5 +1,5 @@
 <?php
-
+global $config;
 $config = require_once '../config/config.php';
 if ($config['debug']) {
     ini_set('error_reporting', E_ALL);
@@ -24,8 +24,8 @@ if ($uri !== '/' && file_exists($uri)) {
 require '../autoload.php';
 //Статистическая функция которою можно вызвать везде, где это нужно
 function asset($path) {
-
-    return 'http://news/'. ltrim($path, '/');
+    global $config;
+    return $config['app']['domainName'] . '/' . ltrim($path, '/');
 }
 // Инициализация роутера
 $router = new Core\Router();
