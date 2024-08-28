@@ -1,0 +1,8 @@
+RewriteEngine on
+
+# Перенаправляем корневой запрос в папку public
+RewriteRule ^$ public/ [L]
+
+# Перенаправляем все запросы в папку public
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]

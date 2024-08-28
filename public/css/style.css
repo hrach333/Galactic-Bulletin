@@ -1,0 +1,175 @@
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+* {
+    font-family: "Open Sans", sans-serif;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+h1 {
+    font-size: 25pt;
+}
+h2 {
+    font-size: 18pt;
+}
+.header {
+    height: 750px;
+}
+.logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-left: 100px;
+    padding-top:20px;
+}
+.logo div {
+    margin-left: 10px;
+}
+.logo-text {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #2C145E;
+    width: 270px;
+}
+.background {
+    width: 100%;
+    min-height: 646px;
+    position: relative;
+    overflow: hidden;
+}
+.background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Масштабирует изображение, сохраняя пропорции, и заполняет контейнер */
+    z-index: -1;
+}
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+}
+
+.info p {
+    font-size: 18pt;
+}
+.content {
+    width: 95%;
+    margin: 0 auto;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.news {
+    display: flex;
+    flex: 1 1 calc(50% - 10px); /* Элемент занимает 50% ширины контейнера */
+    box-sizing: border-box; /* Учитывает padding и border при расчете ширины */
+    padding: 20px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.date {
+    width: 118px;
+    height: 34px;
+    gap: 10px;
+    border-radius: 20px;
+    background: #ECF2F5;
+    align-content: center;
+    text-align: center;
+}
+
+
+
+.button-more, .button-home {
+    width: 180px;
+    height: 35px;
+    padding: 5px;
+    margin-top: 50px;
+    border-radius: 25px;
+    border: 2px solid #9b407a;
+    color: #9b407a;
+    text-align: center;
+    align-content: center;
+    text-decoration:none;
+}
+
+.button-more:hover {
+    background: #9b407a;
+    color: #fff;
+}
+.button-home {
+    font-size: 10pt;
+}
+
+.button-more:hover, .button-home:hover {
+    background: #9b407a;
+    color: #fff;
+}
+.paginate ul  {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap:5px;
+}
+.paginate ul li {
+    width: 50px;
+    height: 50px;
+    font-size: 16pt;
+    border: 2px solid #9b407a;
+    border-radius: 50%;
+    align-content: center;
+    text-align: center;
+    color:#9b407a;
+}
+a {
+    text-decoration: none;
+}
+.paginate ul li:hover {
+    background: #9b407a;
+    color: #fff;
+}
+.active {
+    background: #9b407a;
+    color: white;
+}
+.footer {
+    display: flex;
+    width: 95%;
+    min-height: 150px;
+    margin:0 auto;
+    border-top: 2px solid #6c6e7b;
+    align-items: center;
+}
+.news-horizontal {
+    display: flex;
+    justify-content: center;
+}
+.announce{
+    color:#841844;
+}
+.breadcrumbs {
+    color: gray;
+    font-size: 10pt;
+}
+.row {
+    display: flex;
+}
+.news-text {
+    padding: 10px;
+}
+#next-page {
+    width: 90px;
+    border-radius: 25px;
+}
