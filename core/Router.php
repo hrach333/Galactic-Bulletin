@@ -33,8 +33,9 @@ class Router
                 );
             }
         }
-
-        throw new \Exception('No route defined for this URI.');
+        // Если маршрут не найден, возвращаем ошибку 404
+        $this->handleNotFound();
+        //throw new \Exception('No route defined for this URI.');
     }
 
     protected function matchRoute($uri, $route)
@@ -68,5 +69,16 @@ class Router
     protected function formatUri($uri)
     {
         return trim($uri, '/');
+    }
+
+    /**
+     * Функция перенаправляет на ошибку 404 если нет такой url
+     * @return void
+     */
+    protected function handleNotFound()
+    {
+        http_response_code(404); // Устанавливаем HTTP статус 404
+        require '../app/views/errors/404.php'; // Подключаем файл с 404 страницей
+        exit(); // Останавливаем дальнейшее выполнение
     }
 }
